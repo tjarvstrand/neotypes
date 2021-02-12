@@ -1,0 +1,175 @@
+<!DOCTYPE html><html><head><title>neotypes: Changelog</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="neotypes" /><meta name="description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="og:image" content="/neotypes/img/poster.png" /><meta name="image" property="og:image" content="/neotypes/img/poster.png" /><meta name="og:title" content="neotypes: Changelog" /><meta name="title" property="og:title" content="neotypes: Changelog" /><meta name="og:site_name" content="neotypes" /><meta name="og:url" content="https://neotypes.github.io/neotypes/" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><link rel="icon" type="image/png" href="/neotypes/img/favicon.png" /><meta name="twitter:title" content="neotypes: Changelog" /><meta name="twitter:image" content="/neotypes/img/poster.png" /><meta name="twitter:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/neotypes/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/neotypes/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/neotypes/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/neotypes/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/neotypes/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/neotypes/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/neotypes/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/neotypes/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/neotypes/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/neotypes/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/neotypes/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/neotypes/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/neotypes/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/neotypes/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/neotypes/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/neotypes/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/neotypes/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/neotypes/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/neotypes/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/neotypes/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/neotypes/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/neotypes/css/pattern-style.css" /><link rel="stylesheet" href="/neotypes/css/style.css" /></head><body><header id="site-header"><div class="navbar-wrapper navbar-inverse"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/neotypes/" class="brand"><div class="icon-wrapper"><span>neotypes</span></div></a></div><nav class="text-right"><ul class=""><li class="search-nav hidden-xs"><div id="search-dropdown"><label><i class="fa fa-search"></i>Search</label><input id="search-bar" type="text" placeholder="Enter keywords here..." onclick="displayToggleSearch(event)" /><ul id="search-dropdown-content" class="dropdown dropdown-content"></ul></div></li><li><a class="transparent-on-hover" href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i><span class="hidden-sm hidden-xs">GitHub</span></a></li><li><a class="transparent-on-hover" href="/neotypes/api/neotypes/index.html"><i class="fa fa-file-text"></i><span class="hidden-sm hidden-xs">API Documentation</span></a></li></ul></nav></div></div><div class="jumbotron" style="background-image:url('/neotypes/img/jumbotron_pattern.png')"></div><div id="horizontal-menu"><ul class="horizontal-nav"><li><a class="" href="/neotypes/">Home</a></li><li><a class="" href="/neotypes/overview.html">Overview</a></li><li><a class="" href="/neotypes/parameterized_queries.html">Parameterized Queries</a></li><li><a class="" href="/neotypes/types.html">Supported types</a></li><li><a class="" href="/neotypes/alternative_effects.html">Alternative effects</a></li><li><a class="" href="/neotypes/streams.html">Streaming</a></li><li><a class="" href="/neotypes/driver_transaction.html">Transactions</a></li><li><a class=" active " href="/neotypes/changelog.html">Changelog</a></li></ul></div></header><main id="site-main" class="page-site-main"><section class="use"><div class="container"><div id="content"><h1 id="changelog">Changelog</h1>
+
+<h2 id="v0160-2021-02-09">v0.16.0 <em>(2021-02-09)</em></h2>
+
+<h3 id="removing-session--using-the-new-rx-module-for-streaming-221">Removing Session &amp; Using the new Rx module for Streaming (<a href="https://github.com/neotypes/neotypes/pull/221" target="_blank">#221</a>)</h3>
+
+<p>We replaced our in-house implementation of <strong>Streaming</strong>
+with wrappers for the new <code class="highlighter-rouge">Rx</code> module of the <strong>Java</strong> driver.</p>
+
+<p>During this change we also removed <code class="highlighter-rouge">Session</code> since it wasn’t actually needed.</p>
+
+<p>This change implies that now you can chose between a
+normal <code class="highlighter-rouge">Driver[F]</code> or a <code class="highlighter-rouge">StreamingDriver[S, F]</code>,
+the latter can be used to create both a
+normal <code class="highlighter-rouge">Transaction[F]</code> or a <code class="highlighter-rouge">StreamingTransaction[S, F]</code>.
+The first one no longer supports streaming data from the database,
+but the second one implies that even no-streaming operations like <code class="highlighter-rouge">single</code>
+are implemented in terms of <code class="highlighter-rouge">ReactiveStreams</code>.<br />
+However, if you use single query + auto-commit syntax
+provided by <code class="highlighter-rouge">DeferredQuery</code> then you will use normal <em>(asynchronous)</em>
+<strong>Transactions</strong> for most operations and <strong>Streaming</strong>
+<strong>Transactions</strong> only for <code class="highlighter-rouge">stream</code> queries.</p>
+
+<p>This is quite a big change, because now the <code class="highlighter-rouge">Stream</code> typeclass
+doesn’t need to be in scope when calling <code class="highlighter-rouge">stream</code>,
+but rather when creating the <strong>Driver</strong>;
+By calling <code class="highlighter-rouge">GraphDatabase.streamingDriver[S[_]]</code></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Replace this:</span>
+<span class="k">val</span> <span class="nv">driverR</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">neotypes.Driver</span><span class="o">[</span><span class="kt">IO</span><span class="o">]]</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="k">val</span> <span class="nv">sessionR</span> <span class="k">=</span> <span class="nv">driverR</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">session</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">data</span> <span class="k">=</span> <span class="nv">fs2</span><span class="o">.</span><span class="py">Stream</span><span class="o">.</span><span class="py">resource</span><span class="o">(</span><span class="n">sessionR</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">s</span> <span class="k">=&gt;</span>
+  <span class="s">"MATCH (p:Person) RETURN p.name"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">String</span><span class="o">].</span><span class="py">stream</span><span class="o">[</span><span class="kt">Fs2IoStream</span><span class="o">](</span><span class="n">s</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// With this:</span>
+<span class="k">val</span> <span class="nv">driverR</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">StreamingDriver</span><span class="o">[</span><span class="kt">Fs2IoStream</span>, <span class="kt">IO</span><span class="o">]]</span> <span class="k">=</span>
+  <span class="nv">GraphDatabase</span><span class="o">.</span><span class="py">streamingDriver</span><span class="o">[</span><span class="kt">Fs2IoStream</span><span class="o">](</span><span class="s">"bolt://localhost:7687"</span><span class="o">,</span> <span class="nv">AuthTokens</span><span class="o">.</span><span class="py">basic</span><span class="o">(</span><span class="s">"neo4j"</span><span class="o">,</span> <span class="s">"****"</span><span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">data</span> <span class="k">=</span> <span class="k">for</span> <span class="o">{</span>
+  <span class="n">driver</span> <span class="k">&lt;-</span> <span class="nv">fs2</span><span class="o">.</span><span class="py">Stream</span><span class="o">.</span><span class="py">resource</span><span class="o">(</span><span class="n">driverR</span><span class="o">)</span>
+  <span class="n">name</span> <span class="k">&lt;-</span> <span class="s">"MATCH (p:Person) RETURN p.name"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">String</span><span class="o">].</span><span class="py">stream</span><span class="o">(</span><span class="n">driver</span><span class="o">)</span>
+<span class="o">}</span> <span class="k">yield</span> <span class="n">name</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>For more information, please read <a href="streams">streaming</a>.</p>
+</blockquote>
+
+<h3 id="rollback-on-cancellation-c6c43d24f8e0c82db40387fa600490c4b85fa297">Rollback on cancellation (<a href="https://github.com/neotypes/neotypes/commit/c6c43d24f8e0c82db40387fa600490c4b85fa297" target="_blank">c6c43d24f8e0c82db40387fa600490c4b85fa297</a>)</h3>
+
+<p>Cancelling an effectual operation that was using a <strong>Transaction</strong>
+will now <code class="highlighter-rouge">rollback</code> the <strong>Transaction</strong> instead of <code class="highlighter-rouge">commit</code> it.</p>
+
+<blockquote>
+  <p><strong>Note</strong>: This should have been its own PR but due the problems on <a href="https://github.com/neotypes/neotypes/pull/164" target="_blank">#164</a> it ended up being a commit on <a href="https://github.com/neotypes/neotypes/pull/221" target="_blank">#221</a>.</p>
+</blockquote>
+
+<h3 id="add-auto-and-semiauto-derivation-199">Add auto and semiauto derivation (<a href="https://github.com/neotypes/neotypes/pull/199" target="_blank">#199</a>)</h3>
+
+<p>Automatic derivation of <strong>Mappers</strong> for case classes is now opt-in,
+and <strong>Mappers</strong> for primitive values are now always on the implicit scope
+<em>(without needing any import)</em>.</p>
+
+<p>Also, we now provide some <code class="highlighter-rouge">semiauto.derive</code> methods which can be used to cache
+<strong>Mapper</strong> instances for case classes <em>(and product types)</em>.</p>
+
+<p>This change also gives higher priority to custom <strong>Mappers</strong>
+on the companion objects of the target types,
+over automatically derived ones.</p>
+
+<p>If you want to keep using automatic derivation you only need to:</p>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- import import neotypes.implicits.mappers.all._
+</span><span class="gi">+ import neotypes.generic.auto._
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>For more information, please read <a href="types">supported types</a>.</p>
+</blockquote>
+
+<h3 id="support-case-class-by-cypher-string-interpolator-201">Support case class by cypher string interpolator (<a href="https://github.com/neotypes/neotypes/pull/201" target="_blank">#201</a>)</h3>
+
+<p>Now you can pass case class instances directly to cypher string interpolator,
+this will add all their properties as parameters of the query.</p>
+
+<p>For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.generic.auto._</span> <span class="c1">// Provides automatic derivation of ParameterMapper for any case class. // Provides automatic derivation of ParameterMapper for any case class.</span>
+<span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the ` interpolator into the scope. // Adds the ` interpolator into the scope.</span>
+
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">user</span> <span class="k">=</span> <span class="nc">User</span><span class="o">(</span><span class="s">"my name"</span><span class="o">,</span> <span class="mi">33</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">query</span> <span class="k">=</span> <span class="n">c</span><span class="s">"""CREATE (u: User { $user }) RETURN u"""</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>For more information, please read <a href="parameterized_queries">parameterized queries</a>.</p>
+</blockquote>
+
+<h2 id="v0151-2020-09-08">v0.15.1 <em>(2020-09-08)</em></h2>
+
+<h3 id="fix-id-handling-174">Fix id handling (<a href="https://github.com/neotypes/neotypes/pull/174" target="_blank">#174</a>)</h3>
+
+<p><strong>neotypes</strong> now ensures that if you have a custom <code class="highlighter-rouge">id</code> property,
+that one takes precedence over the system <em>(<strong>neo4j</strong>)</em> one.</p>
+
+<blockquote>
+  <p>For more information, please read <a href="types#neo4j-id"><strong>neo4j</strong> id</a>.</p>
+</blockquote>
+
+<h2 id="v0150-2020-07-30">v0.15.0 <em>(2020-07-30)</em></h2>
+
+<h3 id="making-session-thread-safe-163">Making Session thread safe (<a href="https://github.com/neotypes/neotypes/pull/163" target="_blank">#163</a>)</h3>
+
+<p><code class="highlighter-rouge">neotypes.Session</code> is now thread safe, by ensuring only one active <code class="highlighter-rouge">neotypes.Transaction</code> per session.</p>
+
+<blockquote>
+  <p>For more information, please read <a href="driver_session_transaction#session-thread-safety">thread safety</a>.</p>
+</blockquote>
+
+<h2 id="v0140-2020-07-10">v0.14.0 <em>(2020-07-10)</em></h2>
+
+<h3 id="upgrade-neo4j-java-driver-to-version-4-140">Upgrade neo4j java driver to version 4 (<a href="https://github.com/neotypes/neotypes/pull/140" target="_blank">#140</a>)</h3>
+
+<p><strong>neotypes</strong> is now published for the <code class="highlighter-rouge">v4</code> version of the <strong>Java</strong> driver,
+instead of the <code class="highlighter-rouge">1.7.x</code> version.</p>
+
+<h2 id="v0132-2020-02-23">v0.13.2 <em>(2020-02-23)</em></h2>
+
+<h3 id="case-class-mapper-for-maps-60">Case class mapper for maps (<a href="https://github.com/neotypes/neotypes/pull/60" target="_blank">#60</a>)</h3>
+
+<p>You can now query for a <strong>case class</strong> when returning a node or a <a href="https://neo4j.com/docs/cypher-manual/current/syntax/maps/#cypher-map-projection">map projection</a>.</p>
+
+<h3 id="fix-composite-types-61">Fix composite types (<a href="https://github.com/neotypes/neotypes/pull/61" target="_blank">#61</a>)</h3>
+
+<p><strong>neotypes</strong> now supports all <a href="https://neo4j.com/docs/cypher-manual/current/syntax/values/#composite-types">composite types</a>.</p>
+
+<h2 id="v0131-2020-01-09">v0.13.1 <em>(2020-01-09)</em></h2>
+
+<p>Bug fixes and improvements to the docs.</p>
+
+<blockquote>
+  <p>Special thanks to @geoffjohn11</p>
+</blockquote>
+
+<h2 id="v0130-2019-09-11">v0.13.0 <em>(2019-09-11)</em></h2>
+
+<h3 id="scala-213-support-45">Scala 2.13 support (<a href="https://github.com/neotypes/neotypes/pull/45" target="_blank">#45</a>)</h3>
+
+<p><strong>neotypes</strong> is now cross compiled for <strong>Scala</strong> <code class="highlighter-rouge">2.12</code> &amp; <code class="highlighter-rouge">2.13</code>,
+instead of for <code class="highlighter-rouge">2.11</code> &amp; <code class="highlighter-rouge">2.12</code>.</p>
+
+<h2 id="v0120-2019-08-25">v0.12.0 <em>(2019-08-25)</em></h2>
+</div></div></section></main><footer id="site-footer"><div class="container"><div class="row"><div class="col-xs-6"><p>neotypes is designed and developed by <a href="" target="_blank" rel="noopener noreferrer">neotypes</a></p></div><div class="col-xs-6"><p class="text-right"><a href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><span class="fa fa-github"></span>View on GitHub</a></p></div></div><div class="row"><div class="col-xs-6"><p>Website built with <a href="https://47degrees.github.io/sbt-microsites/" target="_blank" rel="noopener noreferrer">sbt-microsites</a> - © 2019 <a href="https://www.47deg.com/" target="_blank" rel="noopener noreferrer">47 Degrees</a></p></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/neotypes/highlight/highlight.pack.js"></script><script src="/neotypes/lunr/lunr.js"></script><script>
+// For all code blocks, copy the language from the containing div
+// to the inner code tag (where hljs expects it to be)
+const langPrefix = 'language-';
+document.querySelectorAll(`div[class^='${langPrefix}']`).forEach(function(div) {
+  div.classList.forEach(function(cssClass) {
+    if (cssClass.startsWith(langPrefix)) {
+      const lang = cssClass.substring(langPrefix.length);
+      div.querySelectorAll('pre code').forEach(function(code) {
+        code.classList.add(lang);
+      });
+    }
+  });
+});
+
+hljs.configure({languages:['scala','java','bash']});
+hljs.initHighlightingOnLoad();
+      </script><script>console.info('\x57\x65\x62\x73\x69\x74\x65\x20\x62\x75\x69\x6c\x74\x20\x77\x69\x74\x68\x3a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x5f\x5f\x0a\x20\x20\x20\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x5f\x20\x20\x2f\x20\x2f\x5f\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x5f\x5f\x5f\x20\x20\x28\x5f\x29\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x28\x5f\x29\x20\x2f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x0a\x20\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x60\x5f\x5f\x20\x5c\x2f\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x20\x2f\x20\x5f\x5f\x2f\x20\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x0a\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x5f\x2f\x20\x2f\x20\x2f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x5f\x5f\x2f\x20\x2f\x20\x20\x2f\x20\x2f\x5f\x2f\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x20\x2f\x5f\x2f\x20\x20\x5f\x5f\x28\x5f\x5f\x20\x20\x29\x0a\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2e\x5f\x5f\x5f\x2f\x5c\x5f\x5f\x2f\x20\x20\x20\x20\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x2f\x20\x20\x20\x5c\x5f\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x0a\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f\x34\x37\x64\x65\x67\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f\x73\x62\x74\x2d\x6d\x69\x63\x72\x6f\x73\x69\x74\x65\x73')</script><script>((window.gitter = {}).chat = {}).options = {
+room: 'neotypes/neotypes'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/neotypes/js/version-selector.js"></script><script src="/neotypes/js/search.js"></script></body></html>

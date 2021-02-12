@@ -238,8 +238,8 @@
                         <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery]."></a>
                         <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery].">DeferredQueryBuilder</a>
                       </li><li class="current-entities indented1">
-                        <span class="separator"></span>
-                        <a class="class" href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
+                        <a class="object" href="Driver$.html" title=""></a>
+                        <a class="trait" href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
                         <a href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase">Driver</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
@@ -258,21 +258,25 @@
                         <a class="trait" href="QueryOrgMappersLowPriority.html" title=""></a>
                         <a href="QueryOrgMappersLowPriority.html" title="">QueryOrgMappersLowPriority</a>
                       </li><li class="current-entities indented1">
-                        <a class="object" href="Session$.html" title=""></a>
-                        <a class="trait" href="Session.html" title=""></a>
-                        <a href="Session.html" title="">Session</a>
-                      </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
                         <a href="Stream.html" title="">Stream</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="trait" href="StreamingDriver.html" title=""></a>
+                        <a href="StreamingDriver.html" title="">StreamingDriver</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="trait" href="StreamingTransaction.html" title=""></a>
+                        <a href="StreamingTransaction.html" title="">StreamingTransaction</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Transaction$.html" title=""></a>
                         <a class="trait" href="Transaction.html" title=""></a>
                         <a href="Transaction.html" title="">Transaction</a>
                       </li><li class="current-entities indented1">
-                        <span class="separator"></span>
-                        <a class="object" href="TransactionConfig$.html" title="Scala friendly factory for instances of org.neo4j.driver.TransactionConfig."></a>
-                        <a href="TransactionConfig$.html" title="Scala friendly factory for instances of org.neo4j.driver.TransactionConfig.">TransactionConfig</a>
+                        <a class="object" href="TransactionConfig$.html" title=""></a>
+                        <a class="class" href="TransactionConfig.html" title="Scala friendly builder for instances of org.neo4j.driver.TransactionConfig and org.neo4j.driver.SessionConfig."></a>
+                        <a href="TransactionConfig.html" title="Scala friendly builder for instances of org.neo4j.driver.TransactionConfig and org.neo4j.driver.SessionConfig.">TransactionConfig</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
                         <a class="object" href="exceptions$.html" title=""></a>
@@ -420,7 +424,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="CypherStringInterpolator.html"><span class="name">CypherStringInterpolator</span></a><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.12/scala/AnyVal.html#scala.AnyVal" class="extype" name="scala.AnyVal">AnyVal</a></span>
+        <a title="" href="CypherStringInterpolator.html"><span class="name">CypherStringInterpolator</span></a><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.13/scala/AnyVal.html#scala.AnyVal" class="extype" name="scala.AnyVal">AnyVal</a></span>
       </span>
       
       
@@ -436,7 +440,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="Represents a Neo4j query that can be asynchronously on a effect type." href="DeferredQuery.html"><span class="name">DeferredQuery</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.12/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.12/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="Represents a Neo4j query that can be asynchronously on a effect type." href="DeferredQuery.html"><span class="name">DeferredQuery</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.13/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.13/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">Represents a Neo4j query that can be asynchronously on a effect type.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a Neo4j query that can be asynchronously on a effect type.
@@ -465,7 +469,7 @@
 
 <span class="kw">val</span> deferredQuery = deferredQueryBuilder.query[<span class="std">Unit</span>]</pre></li></ol>
             </div><dt>See also</dt><dd><span class="cmt"><p><a href="https://neotypes.github.io/neotypes/parameterized_queries.html">The parametrized queries documentation</a>.</p></span></dd></dl></div>
-    </li><li name="neotypes.Driver" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="neotypes.Driver" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Driver[F[_]]extendsAnyRef"></a><a id="Driver[F[_]]:Driver[F]"></a>
       <span class="permalink">
       <a href="../neotypes/Driver.html" title="Permalink">
@@ -473,8 +477,8 @@
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">class</span>
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
         <a title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase" href="Driver.html"><span class="name">Driver</span></a><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
@@ -482,7 +486,7 @@
       
       <p class="shortcomment cmt">A neotypes driver for accessing the neo4j graph database
 A driver wrapped in the resource type can be created using the neotypes GraphDatabase</p><div class="fullcomment"><div class="comment cmt"><p>A neotypes driver for accessing the neo4j graph database
-A driver wrapped in the resource type can be created using the neotypes GraphDatabase</p><pre><span class="kw">val</span> driver = GraphDatabase[F](<span class="lit">"bolt://localhost:7687"</span>).driver</pre></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type for driver</p></dd></dl></div>
+A driver wrapped in the resource type can be created using the neotypes GraphDatabase</p><pre><span class="kw">val</span> driver = GraphDatabase.driver[F](<span class="lit">"bolt://localhost:7687"</span>)</pre></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type for driver</p></dd></dl></div>
     </li><li name="neotypes.QueryArg" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="QueryArgextendsAnyRef"></a><a id="QueryArg:QueryArg"></a>
       <span class="permalink">
@@ -537,22 +541,6 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
-    </li><li name="neotypes.Session" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="Session[F[_]]extendsAnyRef"></a><a id="Session[F[_]]:Session[F]"></a>
-      <span class="permalink">
-      <a href="../neotypes/Session.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="Session.html"><span class="name">Session</span></a><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
-      </span>
-      
-      
     </li><li name="neotypes.Stream" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Stream[S[_]]extendsAnyRef"></a><a id="Stream[S[_]]:Stream[S]"></a>
       <span class="permalink">
@@ -575,6 +563,38 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="neotypes.StreamingDriver" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StreamingDriver[S[_],F[_]]extendsDriver[F]"></a><a id="StreamingDriver[S[_],F[_]]:StreamingDriver[S,F]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingDriver.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="StreamingDriver.html"><span class="name">StreamingDriver</span></a><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.StreamingDriver.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="neotypes.StreamingTransaction" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StreamingTransaction[S[_],F[_]]extendsTransaction[F]"></a><a id="StreamingTransaction[S[_],F[_]]:StreamingTransaction[S,F]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingTransaction.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="StreamingTransaction.html"><span class="name">StreamingTransaction</span></a><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.StreamingTransaction.F">F</span>]</span>
+      </span>
+      
+      
     </li><li name="neotypes.Transaction" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="Transaction[F[_]]extendsAnyRef"></a><a id="Transaction[F[_]]:Transaction[F]"></a>
       <span class="permalink">
@@ -591,6 +611,25 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
+    </li><li name="neotypes.TransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TransactionConfigextendsAnyRef"></a><a id="TransactionConfig:TransactionConfig"></a>
+      <span class="permalink">
+      <a href="../neotypes/TransactionConfig.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Scala friendly builder for instances of org.neo4j.driver.TransactionConfig and org.neo4j.driver.SessionConfig." href="TransactionConfig.html"><span class="name">TransactionConfig</span></a><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Scala friendly builder for instances of
+<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/TransactionConfig.html" class="extype" name="org.neo4j.driver.TransactionConfig">org.neo4j.driver.TransactionConfig</a> and <a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/SessionConfig.html" class="extype" name="org.neo4j.driver.SessionConfig">org.neo4j.driver.SessionConfig</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Scala friendly builder for instances of
+<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/TransactionConfig.html" class="extype" name="org.neo4j.driver.TransactionConfig">org.neo4j.driver.TransactionConfig</a> and <a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/SessionConfig.html" class="extype" name="org.neo4j.driver.SessionConfig">org.neo4j.driver.SessionConfig</a>.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://neo4j.com/docs/operations-manual/current/monitoring/transaction-management/" target="_blank">Neo4j Transaction Management</a>.</p></span></dd></dl></div>
     </li></ol>
             </div>
 
@@ -647,6 +686,22 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
+    </li><li name="neotypes.Driver" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Driver"></a><a id="Driver:Driver"></a>
+      <span class="permalink">
+      <a href="../neotypes/Driver$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Driver$.html"><span class="name">Driver</span></a>
+      </span>
+      
+      
     </li><li name="neotypes.GraphDatabase" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="GraphDatabase"></a><a id="GraphDatabase:GraphDatabase"></a>
       <span class="permalink">
@@ -695,22 +750,6 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
-    </li><li name="neotypes.Session" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Session"></a><a id="Session:Session"></a>
-      <span class="permalink">
-      <a href="../neotypes/Session$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="Session$.html"><span class="name">Session</span></a>
-      </span>
-      
-      
     </li><li name="neotypes.Stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Stream"></a><a id="Stream:Stream"></a>
       <span class="permalink">
@@ -743,7 +782,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
-    </li><li name="neotypes.TransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="neotypes.TransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TransactionConfig"></a><a id="TransactionConfig:TransactionConfig"></a>
       <span class="permalink">
       <a href="../neotypes/TransactionConfig$.html" title="Permalink">
@@ -755,11 +794,10 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Scala friendly factory for instances of org.neo4j.driver.TransactionConfig." href="TransactionConfig$.html"><span class="name">TransactionConfig</span></a>
+        <a title="" href="TransactionConfig$.html"><span class="name">TransactionConfig</span></a>
       </span>
       
-      <p class="shortcomment cmt">Scala friendly factory for instances of <a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.0/org/neo4j/driver/TransactionConfig.html" class="extype" name="org.neo4j.driver.TransactionConfig">org.neo4j.driver.TransactionConfig</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Scala friendly factory for instances of <a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.0/org/neo4j/driver/TransactionConfig.html" class="extype" name="org.neo4j.driver.TransactionConfig">org.neo4j.driver.TransactionConfig</a>.
-</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://neo4j.com/docs/operations-manual/current/monitoring/transaction-management/" target="_blank">Neo4j Transaction Management</a>.</p></span></dd></dl></div>
+      
     </li><li name="neotypes.exceptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="exceptions"></a><a id="exceptions:exceptions"></a>
       <span class="permalink">
