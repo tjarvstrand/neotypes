@@ -95,7 +95,7 @@
       <td style="text-align: left">✓</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">cats.data.NonEmptyMap[String, T] * ++ </code></td>
+      <td><code class="highlighter-rouge">cats.data.NonEmptyMap[K, V] * ++      </code></td>
       <td style="text-align: center">✓</td>
       <td style="text-align: center">✓</td>
       <td style="text-align: left">✓</td>
@@ -108,6 +108,18 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">cats.data.NonEmptyVector[T] * ++      </code></td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: left">✓</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">enumeratum.Enum +++                   </code></td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: left">✓</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">enumeratum.values.ValueEnum +++       </code></td>
       <td style="text-align: center">✓</td>
       <td style="text-align: center">✓</td>
       <td style="text-align: left">✓</td>
@@ -203,19 +215,19 @@
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">shapeless.HList +++                   </code></td>
+      <td><code class="highlighter-rouge">shapeless.HList                       </code></td>
       <td style="text-align: center">✓</td>
       <td style="text-align: center">✓</td>
       <td style="text-align: left">✓</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">Tuple (1-22) +++                      </code></td>
+      <td><code class="highlighter-rouge">Tuple (1-22) °                        </code></td>
       <td style="text-align: center">✓</td>
       <td style="text-align: center">✓</td>
       <td style="text-align: left">✓</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">User defined case class +++           </code></td>
+      <td><code class="highlighter-rouge">User defined case class °             </code></td>
       <td style="text-align: center">✓</td>
       <td style="text-align: center">✓</td>
       <td style="text-align: left">✓</td>
@@ -226,10 +238,11 @@
 <blockquote>
   <p><code class="highlighter-rouge">*</code> Generic types are supported as long as the the <code class="highlighter-rouge">T</code> is also supported.<br />
 <code class="highlighter-rouge">**</code> <code class="highlighter-rouge">None</code> is converted into <code class="highlighter-rouge">null</code>.<br />
-<code class="highlighter-rouge">***</code> Map-like collections are supported only if their keys are of type <code class="highlighter-rouge">String</code>. Any other kind of tuples is not supported.<br />
+<code class="highlighter-rouge">***</code> Map-like collections are supported only if their keys and values are also supported.<br />
 <code class="highlighter-rouge">+</code> Support is provided in the <strong>neotypes-refined</strong> <em>module</em>.<br />
 <code class="highlighter-rouge">++</code> Support is provided in the <strong>neotypes-cats-data</strong> <em>module</em>.<br />
-<code class="highlighter-rouge">+++</code> Support for automatic and semiautomatic derivation is provided in the <strong>generic</strong> <em>module</em>. <br /></p>
+<code class="highlighter-rouge">+++</code> Support is provided in the <strong>neotypes-enumeratum</strong> <em>module</em>.<br />
+<code class="highlighter-rouge">°</code> Support for automatic and semiautomatic derivation is provided in the <strong>generic</strong> <em>module</em>.<br /></p>
 </blockquote>
 
 <h2 id="additional-types">Additional types</h2>
@@ -237,14 +250,16 @@
 <p>If you want to support your own types, then you would need to create your own <em>implicits</em>.</p>
 
 <ul>
-  <li>For <strong>fields of a case class</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ValueMapper[T]</code>. You can create a new instance:
+  <li>For <strong>fields of a case class</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ValueMapper[T]</code>.
+You can create a new instance:
     <ul>
       <li>From scratch by instantiating it <code class="highlighter-rouge">new ValueMapper[T] { ... }</code>.</li>
       <li>Using the helper methods on the companion object like <code class="highlighter-rouge">fromCast</code> or <code class="highlighter-rouge">instance</code>.</li>
       <li>Casting an already existing mapper using <code class="highlighter-rouge">map</code> or <code class="highlighter-rouge">flatMap</code>.</li>
     </ul>
   </li>
-  <li>For <strong>query results</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ResultMapper[T]</code>. You can create a new instance:
+  <li>For <strong>query results</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ResultMapper[T]</code>.
+You can create a new instance:
     <ul>
       <li>From scratch by instantiating it <code class="highlighter-rouge">new ResultMapper[T] { ... }</code>.</li>
       <li>From a <strong>ValueMapper</strong> <code class="highlighter-rouge">ResultMapper.fromValueMapper[T]</code>.</li>
@@ -252,12 +267,41 @@
       <li>Casting an already existing mapper using <code class="highlighter-rouge">map</code> or <code class="highlighter-rouge">flatMap</code>.</li>
     </ul>
   </li>
-  <li>For <strong>query parameters</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ParameterMapper[T]</code>. You can create a new instance:
+  <li>For <strong>query parameters</strong>, you need an instance of <code class="highlighter-rouge">neotypes.mappers.ParameterMapper[T]</code>.
+You can create a new instance:
     <ul>
       <li>Casting an already existing mapper using <code class="highlighter-rouge">contramap</code>.</li>
     </ul>
   </li>
+  <li>For <strong>keys</strong> in maps, you need an instance of <code class="highlighter-rouge">neotypes.mappers.KeyMapper[T]</code>
+You can create a new instance:
+    <ul>
+      <li>Casting an already existing mapper using <code class="highlighter-rouge">imap</code>.</li>
+    </ul>
+  </li>
 </ul>
+
+<h1 id="anyval-classes">AnyVal classes.</h1>
+
+<p>You can semiautomatically derive mapper for <code class="highlighter-rouge">AnyVal</code> case classes that act like the underlying type.</p>
+
+<p>This may be useful for quick modelling but note that <code class="highlighter-rouge">AnyVal</code> classes have
+some <a href="https://docs.scala-lang.org/overviews/core/value-classes.html#when-allocation-is-necessary">known limitations</a>.<br />
+We recommend using <a href="https://github.com/estatico/scala-newtype"><strong>scala-newtype</strong></a> instead.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.generic.semiauto</span>
+<span class="k">import</span> <span class="nn">neotypes.mappers.</span><span class="o">{</span><span class="nc">ParameterMapper</span><span class="o">,</span> <span class="nc">ValueMapper</span><span class="o">}</span>
+
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Id</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">AnyVal</span>
+<span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idParameterMapper</span><span class="k">:</span> <span class="kt">ParameterMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedParameterMapper</span>
+<span class="c1">// idParameterMapper: ParameterMapper[Id] = neotypes.mappers$ParameterMapper$$anon$29@2b1aa434</span>
+<span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idValueMapper</span><span class="k">:</span> <span class="kt">ValueMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedValueMapper</span>
+<span class="c1">// idValueMapper: ValueMapper[Id] = neotypes.mappers$ValueMapper$$anon$14@5ae6b437</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note</strong> this actually works for any case class of a single field, no need to extend <code class="highlighter-rouge">AnyVal</code>.</p>
+</blockquote>
 
 <h1 id="neo4j-id">Neo4j Id</h1>
 

@@ -106,6 +106,10 @@
                         <a class="trait" href="mappers$$ExecutionMapper.html" title=""></a>
                         <a href="mappers$$ExecutionMapper.html" title="">ExecutionMapper</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="mappers$$KeyMapper$.html" title=""></a>
+                        <a class="trait" href="mappers$$KeyMapper.html" title=""></a>
+                        <a href="mappers$$KeyMapper.html" title="">KeyMapper</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="" title=""></a>
                         <a class="trait" href="mappers$$ParameterMapper.html" title=""></a>
                         <a href="mappers$$ParameterMapper.html" title="">ParameterMapper</a>
@@ -380,7 +384,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">IsoDurationParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/types/IsoDuration.html#org.neo4j.driver.types.IsoDuration" class="extype" name="org.neo4j.driver.types.IsoDuration">IsoDuration</a>]</span>
+        <span class="name">IsoDurationParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.4/org/neo4j/driver/types/IsoDuration.html#org.neo4j.driver.types.IsoDuration" class="extype" name="org.neo4j.driver.types.IsoDuration">IsoDuration</a>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="mappers$$ParameterMappers.html" class="extype" name="neotypes.mappers.ParameterMappers">ParameterMappers</a></dd></dl></div>
@@ -508,7 +512,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">PointParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/types/Point.html#org.neo4j.driver.types.Point" class="extype" name="org.neo4j.driver.types.Point">Point</a>]</span>
+        <span class="name">PointParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.4/org/neo4j/driver/types/Point.html#org.neo4j.driver.types.Point" class="extype" name="org.neo4j.driver.types.Point">Point</a>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="mappers$$ParameterMappers.html" class="extype" name="neotypes.mappers.ParameterMappers">ParameterMappers</a></dd></dl></div>
@@ -556,7 +560,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">ValueParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.1/org/neo4j/driver/Value.html#org.neo4j.driver.Value" class="extype" name="org.neo4j.driver.Value">Value</a>]</span>
+        <span class="name">ValueParameterMapper</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.4/org/neo4j/driver/Value.html#org.neo4j.driver.Value" class="extype" name="org.neo4j.driver.Value">Value</a>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="mappers$$ParameterMappers.html" class="extype" name="neotypes.mappers.ParameterMappers">ParameterMappers</a></dd></dl></div>
@@ -775,9 +779,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="neotypes.mappers.ParameterMappers#mapParameterMapper" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="mapParameterMapper[V,M[_,_]](implicitmapper:neotypes.mappers.ParameterMapper[V],implicitev:M[String,V]&lt;:&lt;Iterable[(String,V)]):neotypes.mappers.ParameterMapper[M[String,V]]"></a><a id="mapParameterMapper[V,M[_,_]](ParameterMapper[V],&lt;:&lt;[M[String,V],Iterable[(String,V)]]):ParameterMapper[M[String,V]]"></a>
+      <a id="mapParameterMapper[K,V,M[_,_]](implicitkeyMapper:neotypes.mappers.KeyMapper[K],implicitvalueMapper:neotypes.mappers.ParameterMapper[V],implicitev:M[K,V]&lt;:&lt;Iterable[(K,V)]):neotypes.mappers.ParameterMapper[M[K,V]]"></a><a id="mapParameterMapper[K,V,M[_,_]](KeyMapper[K],ParameterMapper[V],&lt;:&lt;[M[K,V],Iterable[(K,V)]]):ParameterMapper[M[K,V]]"></a>
       <span class="permalink">
-      <a href="../neotypes/mappers$$ParameterMapper$.html#mapParameterMapper[V,M[_,_]](implicitmapper:neotypes.mappers.ParameterMapper[V],implicitev:M[String,V]&lt;:&lt;Iterable[(String,V)]):neotypes.mappers.ParameterMapper[M[String,V]]" title="Permalink">
+      <a href="../neotypes/mappers$$ParameterMapper$.html#mapParameterMapper[K,V,M[_,_]](implicitkeyMapper:neotypes.mappers.KeyMapper[K],implicitvalueMapper:neotypes.mappers.ParameterMapper[V],implicitev:M[K,V]&lt;:&lt;Iterable[(K,V)]):neotypes.mappers.ParameterMapper[M[K,V]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -786,7 +790,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mapParameterMapper</span><span class="tparams">[<span name="V">V</span>, <span name="M">M<span class="tparams">[<span name="_">_</span>, <span name="_">_</span>]</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="mapper">mapper: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>]</span>, <span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.M">M</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>], <a href="https://www.scala-lang.org/api/2.12.13/scala/collection/Iterable.html#scala.collection.Iterable" class="extype" name="scala.collection.Iterable">Iterable</a>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>)]]</span>)</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.M">M</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>]]</span>
+        <span class="name">mapParameterMapper</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>, <span name="M">M<span class="tparams">[<span name="_">_</span>, <span name="_">_</span>]</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="keyMapper">keyMapper: <a href="mappers$$KeyMapper.html" class="extype" name="neotypes.mappers.KeyMapper">KeyMapper</a>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.K">K</span>]</span>, <span name="valueMapper">valueMapper: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>]</span>, <span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.M">M</span>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.K">K</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>], <a href="https://www.scala-lang.org/api/2.12.13/scala/collection/Iterable.html#scala.collection.Iterable" class="extype" name="scala.collection.Iterable">Iterable</a>[(<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.K">K</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>)]]</span>)</span><span class="result">: <a href="mappers$$ParameterMapper.html" class="extype" name="neotypes.mappers.ParameterMapper">ParameterMapper</a>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.M">M</span>[<span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.K">K</span>, <span class="extype" name="neotypes.mappers.ParameterMappers.mapParameterMapper.V">V</span>]]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="mappers$$ParameterMappers.html" class="extype" name="neotypes.mappers.ParameterMappers">ParameterMappers</a></dd></dl></div>
