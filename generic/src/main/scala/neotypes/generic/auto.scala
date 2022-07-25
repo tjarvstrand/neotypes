@@ -2,7 +2,7 @@ package neotypes
 package generic
 
 import mappers.ResultMapper
-
+import neotypes.Exported
 import shapeless.HList
 
 object auto {

@@ -4,7 +4,6 @@ import java.time.{Duration, LocalDate, LocalDateTime, LocalTime, Period, OffsetD
 import java.util.UUID
 
 import exceptions.{IncoercibleException, PropertyNotFoundException}
-import generic.Exported
 import types.{Path, QueryParam}
 import internal.utils.traverse.{traverseAs, traverseAsList}
 

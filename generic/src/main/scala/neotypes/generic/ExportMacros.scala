@@ -2,6 +2,7 @@ package neotypes
 package generic
 
 import mappers.ResultMapper
+import neotypes.Exported
 
 import scala.reflect.macros.blackbox
 
@@ -17,7 +18,7 @@ private[generic] class ExportMacros(val c: blackbox.Context) {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[ResultMapper[A]]](
-          q"new _root_.neotypes.generic.Exported($t: _root_.neotypes.mappers.ResultMapper[$A])"
+          q"new _root_.neotypes.Exported($t: _root_.neotypes.mappers.ResultMapper[$A])"
         )
     }
   }
@@ -31,7 +32,7 @@ private[generic] class ExportMacros(val c: blackbox.Context) {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[QueryArgMapper[A]]](
-          q"new _root_.neotypes.generic.Exported($t: _root_.neotypes.QueryArgMapper[$A])"
+          q"new _root_.neotypes.Exported($t: _root_.neotypes.QueryArgMapper[$A])"
         )
     }
   }
