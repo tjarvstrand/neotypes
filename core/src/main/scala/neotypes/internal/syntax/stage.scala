@@ -13,7 +13,7 @@ private[neotypes] object stage {
                                    (f: A => Either[Throwable, B])
                                    (g: Throwable => Either[Throwable, B]): Unit =
       internal.utils.void(
-        underlying.thenAccept(a => cb(f(a))).exceptionally { ex: Throwable =>
+        underlying.thenAccept(a => cb(f(a))).exceptionally { (ex: Throwable) =>
           // Execute the function.
           ex match {
             case _: CompletionException => cb(g(ex.getCause))

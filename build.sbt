@@ -63,7 +63,10 @@ def removeScalacOptionsInTest(scalaVersion: String) =
 
 // Common settings.
 val commonSettings = Seq(
-  scalacOptions += "-Ywarn-macros:after",
+  scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, _)) => Seq("-Ywarn-macros:after")
+    case _ => Seq.empty
+  }),
   Test / parallelExecution := false,
   Test / fork := true,
   Test / scalacOptions --= removeScalacOptionsInTest(scalaVersion.value),
@@ -117,14 +120,20 @@ lazy val core = (project in file("core"))
   .settings(commonSettings)
   .settings(
     name := "neotypes-core",
+    crossScalaVersions += "3.1.2",
     libraryDependencies ++=
-      PROVIDED(
-        "org.neo4j.driver" % "neo4j-java-driver" % neo4jDriverVersion
-      ) ++ COMPILE(
-        "com.chuusai" %% "shapeless" % shapelessVersion,
-        "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompatVersion,
-        scalaVersion("org.scala-lang" % "scala-reflect" % _).value
-      )
+      PROVIDED("org.neo4j.driver" % "neo4j-java-driver" % neo4jDriverVersion) ++
+        COMPILE(
+          "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompatVersion,
+        ) ++
+        (CrossVersion.partialVersion(scalaVersion.value) match {
+          case Some((2, _)) => COMPILE(
+            "com.chuusai" %% "shapeless" % shapelessVersion,
+            scalaVersion("org.scala-lang" % "scala-reflect" % _).value
+          )
+          case _ => Seq()
+        })
+
   )
 
 lazy val coreTest = (project in file("core-test"))

@@ -1,5 +1,7 @@
 package neotypes
 package implicits.mappers
+import neotypes.mappers.ValueMapper
+import shapeless.HNil
 
 import scala.collection.generic._
 import scala.collection.{immutable => i, mutable => m}
@@ -48,4 +50,7 @@ trait CompatibilityMappers {
 
   implicit final def neotypesMutableBitSetFactoryToCBF(fact: BitSetFactory[m.BitSet]): CanBuildFrom[Any, Int, m.BitSet] =
     scala.collection.compat.mutableBitSetFactoryToCBF(fact)
+
+  implicit final val HNilMapper: ValueMapper[HNil] =
+    ValueMapper.const(HNil)
 }
