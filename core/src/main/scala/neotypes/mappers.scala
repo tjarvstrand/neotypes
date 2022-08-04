@@ -825,4 +825,52 @@ object mappers {
         optional.map(v => mapper.toQueryParam(v).underlying).orNull
       }
   }
+
+  sealed trait QueryArg
+
+  object QueryArg {
+    final case class Param(param: QueryParam) extends QueryArg
+
+    final case class CaseClass(params: Map[String, QueryParam]) extends QueryArg
+
+    final case class QueryBuilder(builder: DeferredQueryBuilder) extends QueryArg
+  }
+
+  @annotation.implicitNotFound(
+    """
+  Could not find the ArgMapper for ${A}.
+
+  Make sure ${A} is a supported type: https://neotypes.github.io/neotypes/types.html
+  If ${A} is a case class then `import neotypes.generic.auto._` for the automated derivation,
+  or use the semiauto one: `implicit val instance: CaseClassArgMapper[A] = neotypes.generic.semiauto.deriveCaseClassArgMapper`
+  """
+  )
+  trait QueryArgMapper[A] {
+    def toArg(value: A): QueryArg
+  }
+
+  object QueryArgMapper extends QueryArgMappers {
+    def apply[A](implicit ev: QueryArgMapper[A]): ev.type = ev
+  }
+
+  trait QueryArgMappers extends QueryArgMappersLowPriority {
+    implicit final def fromParameterMapper[A](implicit mapper: ParameterMapper[A]): QueryArgMapper[A] =
+      new QueryArgMapper[A] {
+        override def toArg(value: A): QueryArg =
+          QueryArg.Param(mapper.toQueryParam(value))
+      }
+
+    implicit final val deferredQueryBuilderArgMapper: QueryArgMapper[DeferredQueryBuilder] =
+      new QueryArgMapper[DeferredQueryBuilder] {
+        override def toArg(value: DeferredQueryBuilder): QueryArg =
+          QueryArg.QueryBuilder(value)
+      }
+  }
+
+  trait QueryArgMappersLowPriority {
+    implicit final def exportedCaseClassArgMapper[A](implicit exported: Exported[QueryArgMapper[A]]): QueryArgMapper[A] =
+      exported.instance
+  }
+
+
 }
